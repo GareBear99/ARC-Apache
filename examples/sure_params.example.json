@@ -1,6 +1,5 @@
 {
-  "region": "local-demo",
-  "scale": "toy",
-  "cells": 1024,
-  "determinism": "required"
+  "world_seed_mode": "deterministic",
+  "grid_size": [128, 128, 64],
+  "generator_notes": "Example SURE parameters for ARC-Apache seeded reconstruction receipts."
 }

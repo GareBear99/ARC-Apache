@@ -1,98 +1,33 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ARC Binary Manifest v4",
+  "title": "ARC-Apache Binary Manifest v5",
   "type": "object",
-  "required": [
-    "version",
-    "object_id",
-    "content_class",
-    "codec",
-    "payload_sha256",
-    "size_bytes",
-    "chunk_size",
-    "chunks",
-    "merkle_root",
-    "manifest_sha256"
-  ],
+  "required": ["version", "object_id", "content_class", "codec", "envelope_sha256", "envelope_size_bytes", "chunk_size", "chunks", "merkle_root", "manifest_sha256"],
   "properties": {
-    "version": {
-      "const": 4
-    },
-    "object_id": {
-      "type": "string"
-    },
-    "content_class": {
-      "type": "string"
-    },
-    "codec": {
-      "type": "string"
-    },
-    "payload_sha256": {
-      "type": "string",
-      "pattern": "^[0-9a-f]{64}$"
-    },
-    "size_bytes": {
-      "type": "integer",
-      "minimum": 0
-    },
-    "chunk_size": {
-      "type": "integer",
-      "minimum": 1
-    },
+    "version": {"const": 5},
+    "object_id": {"type": "string", "pattern": "^arcbin:[a-f0-9]{64}$"},
+    "content_class": {"type": "string"},
+    "codec": {"type": "string"},
+    "envelope_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "envelope_size_bytes": {"type": "integer", "minimum": 0},
+    "chunk_size": {"type": "integer", "minimum": 1},
     "chunks": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": [
-          "index",
-          "sha256",
-          "size_bytes",
-          "store_path"
-        ],
+        "required": ["index", "sha256", "size_bytes", "store_path"],
         "properties": {
-          "index": {
-            "type": "integer",
-            "minimum": 0
-          },
-          "sha256": {
-            "type": "string",
-            "pattern": "^[0-9a-f]{64}$"
-          },
-          "size_bytes": {
-            "type": "integer",
-            "minimum": 0
-          },
-          "store_path": {
-            "type": "string"
-          }
+          "index": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "size_bytes": {"type": "integer", "minimum": 0},
+          "store_path": {"type": "string"}
         }
       }
     },
-    "merkle_root": {
-      "type": "string",
-      "pattern": "^[0-9a-f]{64}$"
-    },
-    "manifest_sha256": {
-      "type": "string",
-      "pattern": "^[0-9a-f]{64}$"
-    },
-    "source_path": {
-      "type": "string"
-    },
-    "parents": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "language_link": {
-      "type": "object"
-    },
-    "sure_recipe": {
-      "type": "object"
-    },
-    "created_utc": {
-      "type": "string"
-    }
+    "merkle_root": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "source_path": {"type": ["string", "null"]},
+    "parents": {"type": "array", "items": {"type": "string"}},
+    "created_utc": {"type": "string"},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
   }
 }

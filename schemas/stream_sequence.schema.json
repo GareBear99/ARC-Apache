@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ARC-Apache Stream Sequence v5",
+  "type": "object",
+  "required": ["version", "stream_id", "frames", "sequence_sha256"],
+  "properties": {
+    "version": {"const": 5},
+    "stream_id": {"type": "string"},
+    "source": {"type": "string"},
+    "frames": {"type": "array"},
+    "sequence_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

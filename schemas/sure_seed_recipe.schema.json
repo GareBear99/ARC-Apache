@@ -1,37 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "SURE Seed Recipe v4",
+  "title": "SURE Seed Recipe Object v5",
   "type": "object",
-  "required": [
-    "version",
-    "generator_id",
-    "seed",
-    "parameters_sha256"
-  ],
+  "required": ["version", "generator_id", "seed", "parameters_sha256"],
   "properties": {
-    "version": {
-      "const": 4
-    },
-    "generator_id": {
-      "type": "string"
-    },
-    "generator_version": {
-      "type": "string"
-    },
-    "seed": {
-      "type": "string"
-    },
-    "parameters_sha256": {
-      "type": "string"
-    },
-    "environment_fingerprint": {
-      "type": "string"
-    },
-    "expected_output_sha256": {
-      "type": "string"
-    },
-    "notes": {
-      "type": "string"
-    }
+    "version": {"const": 5},
+    "generator_id": {"type": "string"},
+    "generator_version": {"type": "string"},
+    "seed": {"type": "string"},
+    "parameters_sha256": {"type": "string"},
+    "environment_fingerprint": {"type": "string"},
+    "expected_output_sha256": {"type": ["string", "null"]}
   }
 }

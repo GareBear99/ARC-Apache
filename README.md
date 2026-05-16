@@ -1,82 +1,85 @@
-# ARC-Apache SURE Binary Memory Pack v4
+# ARC-Apache SURE Binary Memory Pack v5
 
-**ARC-Apache** is a binary-first memory and proof plane for the ARC ecosystem. It converts runtime events, language data, visual streams, model artifacts, repository states, simulation seeds, and large payloads into deterministic binary objects, then binds those objects to cryptographic manifests, Merkle roots, and ARC receipts.
+**ARC-Apache** is the binary-first cryptographic memory substrate for the ARC ecosystem. It treats every durable knowledge object as a deterministic binary object first, then binds that object to hashes, Merkle roots, manifests, receipts, signatures, and optional encryption.
 
-This package is a **clean drop-in reference layer**. It does not overwrite any existing ARC repository. It provides the doctrine, schemas, CLI scaffold, and integration map needed to wire the uploaded ARC packages into one coherent binary memory runtime.
+This package is designed as the bridge between:
 
-## Core doctrine
+- **ARC-Core** — authority, receipts, policy, event registration
+- **ARC Language Module** — lexical / meaning spine mirrored into binary objects
+- **ARC-StreamMemory** — screen, sensor, frame, terminal, and visual memory streams
+- **ARC-Neuron LLMBuilder** — datasets, candidates, GGUF/model artifacts, benchmark lineage
+- **OmniBinary Runtime** — binary intake and deterministic mirror discipline
+- **Arc-RAR** — portable rollback / proof bundles
+- **SURE** — seeded reconstruction math for large generated payloads
+- **Proto-Synth Grid Engine** — visual cognition shell for graphs, receipts, streams, and memory maps
+- **ARC Lucifer Cleanroom Runtime / Cognition Core** — event-sourced runtime and promotion lanes
 
-```text
-information -> canonical binary object -> SHA-256 payload hash -> chunk hashes -> Merkle root -> manifest hash -> receipt -> ARC-Core registration
-```
+## Current capability
 
-Human-readable text, JSON, SQLite indexes, embeddings, summaries, search indexes, UI graphs, and dashboards are **views**. The canonical truth is the binary object plus its cryptographic proof chain.
-
-## Why this matters
-
-ARC already has strong pieces: authority, receipts, language data, local runtime, visual memory, binary runtime, archive bundles, seeded simulation, and model governance. v4 turns those pieces into one strict storage doctrine:
-
-| Layer | Role in ARC-Apache |
-|---|---|
-| ARC-Core | authority kernel, receipts, policy state, lineage registry |
-| ARC Lucifer Cleanroom Runtime | deterministic local runtime, replay/rollback, memory tiers, operator actions |
-| ARC Cognition Core | benchmark/evaluation/promotion capsules |
-| ARC Language Module | canonical lexical/language spine, directly mirrored into binary objects |
-| ARC-Neuron LLMBuilder | model/dataset/candidate/incumbent artifact consumer and producer |
-| OmniBinary Runtime | binary intake discipline, executable/object inspection, lane classification |
-| ARC-StreamMemory | visual/frame/sequence memory capture |
-| Arc-RAR | portable archive, rollback, restore, proof bundle |
-| ARC-Turbo-OS | deterministic scheduler/resolver/worker router |
-| ARC-TurboMine | compute/proof/scoring contribution lane |
-| Proto-Synth Grid Engine | visual cognition shell for payloads, receipts, branches, and memory streams |
-| SURE | seeded-universe recreation math for generator/seed/parameter-based large payload references |
-
-## What is executable now
-
-The included CLI has no external Python dependencies and supports:
+v5 provides a runnable reference implementation for the core proof loop:
 
 ```bash
-python scripts/arc_apache.py pack ./some_large_file.bin --store .arc_apache
-python scripts/arc_apache.py verify .arc_apache/manifests/<manifest_hash>.json --store .arc_apache
-python scripts/arc_apache.py restore .arc_apache/manifests/<manifest_hash>.json restored.bin --store .arc_apache
-python scripts/arc_apache.py receipt .arc_apache/manifests/<manifest_hash>.json --source local-runtime --store .arc_apache
-python scripts/arc_apache.py mirror-language ../arc-language-module-main --store .arc_apache
-python scripts/arc_apache.py sure-recipe --generator sure-v16 --seed demo-seed --params examples/sure_params.example.json --store .arc_apache
+python scripts/arc_apache.py init-store --store .arc_apache
+python scripts/arc_apache.py keygen --store .arc_apache --name local-node
+python scripts/arc_apache.py pack README.md --store .arc_apache --content-class document --codec utf8-text
+python scripts/arc_apache.py verify .arc_apache/manifests/<manifest>.json --store .arc_apache
+python scripts/arc_apache.py receipt .arc_apache/manifests/<manifest>.json --store .arc_apache --source manual
+python scripts/arc_apache.py sign-receipt .arc_apache/receipts/<receipt>.json --store .arc_apache --key-name local-node
+python scripts/arc_apache.py verify-receipt .arc_apache/receipts/<receipt>.json --store .arc_apache
 ```
 
-## Professional framing
+It supports:
 
-This package does not claim a finished AGI system. It claims a concrete, testable storage spine:
+- deterministic binary envelopes
+- chunked object storage
+- SHA-256 payload hashes
+- per-chunk SHA-256 hashes
+- Merkle roots
+- manifest hashes
+- receipt hashes
+- Ed25519 receipt signing when `cryptography` is installed
+- AES-GCM encrypted object packing when `cryptography` is installed
+- language-module binary mirroring
+- stream/frame manifest generation
+- SURE seed-recipe objects
+- Arc-RAR bundle planning
+- ARC-Core route stubs
+- tests and smoke validation
 
-- deterministic binary serialization;
-- content-addressed chunk storage;
-- SHA-256 payload identity;
-- Merkle-root partial verification;
-- manifest and receipt hashing;
-- explicit integration boundaries;
-- no silent overwrite;
-- no fake encryption claims;
-- no model promotion without receipts.
-
-## Repo drop-in recommendation
-
-Recommended new repo name:
+## Doctrine
 
 ```text
-ARC-Apache
+All durable ARC information -> canonical binary object -> cryptographic proof -> receipt -> authorized projections.
 ```
 
-Recommended integration path:
+Text, JSON, SQLite, UI views, markdown, screenshots, source files, model files, frames, benchmark rows, and language graphs are **not the final truth surface**. They are source forms or projections. The canonical durable form is the binary object plus its proof chain.
 
-1. Create ARC-Apache as its own repo.
-2. Add this package contents.
-3. Validate CLI with `python tests/test_arc_apache_cli.py`.
-4. Wire ARC-Core routes to register manifest/receipt metadata.
-5. Wire ARC Language Module to call `mirror-language` on release/build.
-6. Wire StreamMemory frames and sequences into `pack` + `receipt`.
-7. Add Arc-RAR export/import for portable bundles.
-8. Add Proto-Synth visual graph rendering using manifest/receipt indexes.
+## Install / run
 
-## Status
+No install is required for the core pack/verify/restore path. Python 3.10+ is recommended.
 
-**v4 package status:** reference implementation + production-facing architecture pack. It is suitable as a new repo foundation or as a module drop-in after review.
+Optional cryptographic signing/encryption requires:
+
+```bash
+python -m pip install cryptography
+```
+
+Run tests:
+
+```bash
+python -m pytest tests
+```
+
+Run a no-pytest smoke check:
+
+```bash
+python scripts/arc_apache.py smoke --store .arc_apache_smoke
+```
+
+## Public positioning
+
+ARC-Apache is not marketed as a finished AGI. It is a real-world substrate for systems that need memory integrity, replayability, provenance, dataset lineage, model artifact lineage, and cryptographic proof for large binary/runtime objects.
+
+The honest claim:
+
+> ARC-Apache gives ARC systems a binary-first, cryptographically verifiable memory layer that can support language, runtime, stream, model, and seeded-generation objects without treating loose text or opaque blobs as trusted truth.

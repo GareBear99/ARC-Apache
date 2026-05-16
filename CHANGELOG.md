@@ -1,11 +1,15 @@
 # Changelog
 
-## v4.0.0
+## v0.5.0
 
-- Promoted binary-first doctrine to package-level rule.
-- Added production-facing README and public positioning guide.
-- Added dependency-free `arc_apache.py` CLI with `pack`, `verify`, `restore`, `receipt`, `mirror-language`, and `sure-recipe` commands.
-- Added smoke test script.
-- Added schemas for binary manifests, receipts, language links, and SURE recipes.
-- Added ARC-Core, Language Module, and LLMBuilder integration stubs.
-- Added explicit cryptography boundary: hash/Merkle/receipt now; signatures/encryption are future audited extensions, not faked.
+- Adds repository-ready ARC-Apache package structure.
+- Adds deterministic binary envelope format v5.
+- Adds chunked object store, manifest, receipt, restore, and verify commands.
+- Adds optional Ed25519 receipt signing and verification.
+- Adds optional AES-GCM encrypted packing mode.
+- Adds stream sequence manifest generation for ARC-StreamMemory.
+- Adds language mirror command for ARC Language Module.
+- Adds SURE seed recipe object support.
+- Adds ARC-Core route and storage integration stubs.
+- Adds LLMBuilder, Cognition Core, Runtime, Arc-RAR, OmniBinary, Turbo, and Proto-Synth integration docs.
+- Adds tests and smoke command.

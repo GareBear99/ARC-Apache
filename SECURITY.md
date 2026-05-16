@@ -1,21 +1,25 @@
 # Security Policy
 
-ARC-Apache v4 provides hash/Merkle/receipt integrity checks. It does not yet provide audited encryption or public-key signing in the reference CLI.
+ARC-Apache v5 is a reference implementation for binary-first proof chains. It includes real SHA-256, Merkle roots, receipt hashes, optional Ed25519 signing, and optional AES-GCM encryption when the `cryptography` package is available.
 
-## Current guarantees
+## Security boundaries
 
-- SHA-256 payload identity;
-- SHA-256 chunk identity;
-- deterministic Merkle root;
-- manifest hash;
-- receipt hash;
-- deterministic restore verification.
+- Hashes prove object integrity, not author intent.
+- Merkle roots prove chunk-set integrity, not semantic correctness.
+- Receipts bind ARC metadata to payload proofs, but must still be accepted by ARC-Core policy.
+- Signatures prove the holder of a private key signed a receipt.
+- Encryption protects object bytes at rest only if keys are managed correctly.
 
-## Not yet guaranteed by the reference CLI
+## Do not claim
 
-- confidentiality;
-- identity/authorship signatures;
-- tamper-proof remote storage;
-- hardware-backed key custody.
+- Do not claim this is a finished AGI.
+- Do not claim encrypted storage is secure without key management review.
+- Do not claim signed receipts are trusted unless ARC-Core has a trust policy for the signer.
 
-Future cryptographic extensions should use audited libraries and formats such as Ed25519, XChaCha20-Poly1305, AES-256-GCM, age, minisign, Sigstore, or hardware-backed keys.
+## Recommended production hardening
+
+- Move private keys out of `.arc_apache/keys/private` before production.
+- Use OS keychain, HSM, age, SOPS, or a custody-managed vault for private material.
+- Add signed release manifests.
+- Add reproducible build checks.
+- Add ARC-Core policy review before accepting receipts.

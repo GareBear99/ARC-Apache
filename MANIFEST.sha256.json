@@ -1,127 +1,33 @@
 {
-  "package": "ARC_Apache_SURE_Binary_Memory_Pack_v4",
-  "version": "4.0.0",
-  "created_utc": "2026-05-16T08:24:01Z",
-  "files": [
-    {
-      "path": "CHANGELOG.md",
-      "sha256": "41b576ec8888988015326ba86e3f73d1da0c7f9d14b7b25d6fee1854b2b6bde3",
-      "size": 586
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "ffefd1d66e02b90808c331be4c6e02fbf7d5370121775d688578cb21c92a16dd",
-      "size": 1067
-    },
-    {
-      "path": "README.md",
-      "sha256": "f6623e35da10e2f11a46f7e1eef899cbdf195266e8c5cf6314abe474c55c9789",
-      "size": 4221
-    },
-    {
-      "path": "SECURITY.md",
-      "sha256": "d8fee25f3aaac84ccc1479afff07977c2b6e4f1c0482f82ab228ae9bb99a2bd6",
-      "size": 679
-    },
-    {
-      "path": "contracts/ARC_APACHE_CONTRACTS_v4.md",
-      "sha256": "8dfdb5d26703b1f591a815b595d773b4cf6e94146710f7a3f7c5e5ec8c19cabc",
-      "size": 1779
-    },
-    {
-      "path": "docs/ARC_APACHE_MASTER_SPEC_v4.md",
-      "sha256": "4f9fbc156825c9d0320d9d51541a6a189be78be88100eb1f86763171c3e7c110",
-      "size": 3915
-    },
-    {
-      "path": "docs/INTEGRATION_BLUEPRINT_v4.md",
-      "sha256": "9c0826a30447268ebe27c43b7df256765b1644bc99c258b69610020502b556e6",
-      "size": 2224
-    },
-    {
-      "path": "docs/PUBLIC_POSITIONING.md",
-      "sha256": "0293fd9108ed448ba0d95826038522b9f689ba6a1301b7d8e4d01847df4e6cef",
-      "size": 1608
-    },
-    {
-      "path": "examples/sure_params.example.json",
-      "sha256": "f19c939627b8074b725a5a558ad3273dae9c9e6af1a0a59da9f244525d195014",
-      "size": 93
-    },
-    {
-      "path": "integration/ARC_CORE_ROUTE_STUB.md",
-      "sha256": "69bec6de90f26328b00ca7453e0ec50c21e4e7a538d4202b9ad9bbc32d0bfa87",
-      "size": 602
-    },
-    {
-      "path": "integration/LANGUAGE_MODULE_HOOK.md",
-      "sha256": "da73ca49bc82c63f25e16be81d46633f62a6c9e31cf14ab7a7f8356e49e5b01a",
-      "size": 658
-    },
-    {
-      "path": "integration/LLMBUILDER_DATASET_TRACE.md",
-      "sha256": "ff7e66ed8cb17bc290bd5a7adbec1f7837da44172985761adc941d1748d64667",
-      "size": 560
-    },
-    {
-      "path": "math/BINARY_PAYLOAD_MATH_v4.md",
-      "sha256": "3e0eab50c756e17d00dc549bd0b74778a1fc6e629887ed226feec9e9b147c260",
-      "size": 1798
-    },
-    {
-      "path": "public/DEVTO_POST_DRAFT.md",
-      "sha256": "96e74711d17c7f97d43d4ee892d199f9681dc3728753f0b76d4bb218d4c0384f",
-      "size": 1050
-    },
-    {
-      "path": "public/REPO_TOPICS.txt",
-      "sha256": "e189b24f5bbe8faaf0be8be9287f8bc64b9071fb2e5155b98d662d44213b4432",
-      "size": 216
-    },
-    {
-      "path": "pyproject.toml",
-      "sha256": "0dac1eed93429d38f94195eb39d256a355fc4cbeb30566e431f38733bfae14c8",
-      "size": 278
-    },
-    {
-      "path": "schemas/binary_manifest.schema.json",
-      "sha256": "c1e199a22e4e6ecdb2270959c0193b3a39840f3be21aa7cd77e7e2215720c111",
-      "size": 1847
-    },
-    {
-      "path": "schemas/language_binary_link.schema.json",
-      "sha256": "08be4a1d4358f010698cbb53858e2f7f1df33036781978209318592591cb2f92",
-      "size": 633
-    },
-    {
-      "path": "schemas/receipt.schema.json",
-      "sha256": "25c197a0b45e794da371d3faea0945346c1f761bafce1c3f6b5a70ad8fc5fe58",
-      "size": 964
-    },
-    {
-      "path": "schemas/sure_seed_recipe.schema.json",
-      "sha256": "5d9adaec5ea696815123f778f436efaa60c055bc863f3fb4e38839628f91490b",
-      "size": 652
-    },
-    {
-      "path": "scripts/arc_apache.py",
-      "sha256": "0d52ea8708c526e608d679c0b5988770c1ee4b74e61310f589eb3f060df51919",
-      "size": 13542
-    },
-    {
-      "path": "src/arc_apache/__init__.py",
-      "sha256": "4906ba0a2d7b0ce4661978bfc24396f693e55288c5faab631fa355d5639386c5",
-      "size": 22
-    },
-    {
-      "path": "src/arc_apache/cli.py",
-      "sha256": "e042681557bffa19bcb75a68bf94925da6a797c5ef638651ef2b66d32bec973d",
-      "size": 191
-    },
-    {
-      "path": "tests/test_arc_apache_cli.py",
-      "sha256": "4518a9733286b3968d6624740eb8529c4d76fb6baacc1a822986ade69540a99b",
-      "size": 1830
-    }
-  ]
+  ".github/workflows/smoke.yml": "308fb7693430382166097e92b9f77b504334abb89da60b0811359a68d3a80eab",
+  ".gitignore": "a1b994f0ba3b44f6d32a7a03bd8f03299daf301bc12dac84e28ff15045b10f21",
+  "CHANGELOG.md": "636a61357cbbe8e1a39500984d96112ef51f23beaefacc6aeab4970d1598e2df",
+  "CONTRIBUTING.md": "7da8e4de3b2873d1743f88d1cffaea2b06f13cf9157a61bff8171bd145e42343",
+  "LICENSE": "5ce457aad38df848e4bdcc6d876a69e66ef93304532574718b02948611b33c93",
+  "README.md": "5466f547008a5550d2c91099a05093a2ad6abb9bf0bfd99b7ad9b9e1d4b15594",
+  "SECURITY.md": "20ab5ebcbf25ce57e91a773c84e665f3e1a85eb65cbb92643921b47f1ae58da1",
+  "VALIDATION_REPORT.md": "cec949690d2c58c4fa70963a61156b09e15a9c2fb0b079a226b5d1f9f43b4338",
+  "arc_apache/__init__.py": "2c12b8ea17aeb6f9f72a6b02aca218bbc4508a46df9e365a8f6c45ad769e0b34",
+  "arc_apache/cli.py": "ee1faf655d902f254ec61783cceb4fb5001adfee6f83e436adad86c789f72cb9",
+  "contracts/ARC_APACHE_CONTRACTS.md": "9d3ac76c54698a956be71007b8b96f3fca8555c71404d655af8aeb9494c6ed56",
+  "docs/ARCHITECTURE.md": "6ef08ba9a90a7f94a79fe4b1732ccb8ebc5c6f5ae319d5ac707e911ea1bde844",
+  "docs/BINARY_PAYLOAD_MATH.md": "baab27f681d7c0f3f2ba92abcb5590cced9fef7a28715e9903929a985535c997",
+  "docs/ROADMAP_TO_FULL_SADLER_ARC.md": "23f88a28b8c3b5cf2dea05d7415f442e6d00b957e014989178721e454d7d1ecf",
+  "examples/sure_params.example.json": "dd8e200f5b33990d1a9c0812fb7c88f0f5ca27bfbcdab88fe69961de71860dce",
+  "integration/ARCRAR_BUNDLE_PLAN.md": "708a877860324cc021e76c4e278f07d90c917ae07fab7951d0857d86d5f0f3e7",
+  "integration/ARC_CORE_ROUTES.py": "2657f62f3ba94f34d4daf2551919fe162179bd2a5eb27ef11ca8c853626747cd",
+  "integration/ARC_CORE_SQLITE_MIGRATION.sql": "b4b35581d95778132757a39c2b8d2e76bba06430910dc81bb5e3573ad09884c7",
+  "integration/LANGUAGE_MODULE_BINARY_HOOK.md": "5503567ca7e7da3fcec31b526483b2fa2548dc8e11c593780e761bd34dfbf3bb",
+  "integration/LLMBUILDER_BINARY_LINEAGE.md": "c0ccb60906ae3859bda30da70f07aca54363b0c4203d684320178729628b8da2",
+  "integration/PROTO_SYNTH_VISUALIZATION.md": "cacb6eb6b026f9296e03330cfe06a471613552fda681aa7e5a24a863068fe871",
+  "integration/STREAMMEMORY_BINARY_HOOK.md": "947c720250cf529789072df379e3ca86fcda8f8a10939804f063961a04749d84",
+  "public/LAUNCH_POST.md": "ddb96a667039f1a30f02ff767c7fd361d15e082613163eccc9ae679d9f31c44e",
+  "public/REPO_TOPICS.txt": "ac015a78e577358a78d8cde7f9fbcf2b5d63b8800a6eeed792989722a75c1aa3",
+  "pyproject.toml": "17ec0d6e018280c691228df5f96cbd5259838d8e33883fa7437d84c5c24705da",
+  "schemas/binary_manifest.schema.json": "b2cc53abd1c4f7e0aa9d88b121dcffd6b4e02e122411da35774a1a2bf7a07c45",
+  "schemas/receipt.schema.json": "074612b0df466747e258bb1d8410cd2c421cbdc22066f5a986cb61b8cc544956",
+  "schemas/stream_sequence.schema.json": "d991af3f516228d09ed592e3263d52a45c9f9451bf60a068015e799b061af13f",
+  "schemas/sure_seed_recipe.schema.json": "c12426eb435948496b2446a092901542b24f4bfae7d5eee3482a9c648ad550e7",
+  "scripts/arc_apache.py": "494a0ef741fa7da6d40f6144b6d36bdb8c61d589f87f1257b4756c373f530d14",
+  "tests/test_arc_apache_cli.py": "cd85b4c678f32a30046c48c35342f9c3c9fe06f60ccd1b9e5ebb081abdcb8456"
 }
