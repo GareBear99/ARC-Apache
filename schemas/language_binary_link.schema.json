@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ARC Language Binary Link v4",
+  "type": "object",
+  "required": [
+    "version",
+    "language_snapshot_manifest",
+    "promotion_policy"
+  ],
+  "properties": {
+    "version": {
+      "const": 4
+    },
+    "language_snapshot_manifest": {
+      "type": "string"
+    },
+    "language_db_payload_hash": {
+      "type": "string"
+    },
+    "lexical_nodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tokenizer_artifact_hash": {
+      "type": "string"
+    },
+    "promotion_policy": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ARC Receipt v4",
+  "type": "object",
+  "required": [
+    "version",
+    "receipt_type",
+    "source",
+    "payload_sha256",
+    "manifest_sha256",
+    "merkle_root",
+    "receipt_sha256",
+    "created_utc"
+  ],
+  "properties": {
+    "version": {
+      "const": 4
+    },
+    "receipt_type": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "payload_sha256": {
+      "type": "string"
+    },
+    "manifest_sha256": {
+      "type": "string"
+    },
+    "merkle_root": {
+      "type": "string"
+    },
+    "receipt_sha256": {
+      "type": "string"
+    },
+    "policy_status": {
+      "type": "string"
+    },
+    "parent_receipts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actor": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "object"
+    },
+    "created_utc": {
+      "type": "string"
+    }
+  }
+}

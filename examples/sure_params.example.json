@@ -1,0 +1,6 @@
+{
+  "region": "local-demo",
+  "scale": "toy",
+  "cells": 1024,
+  "determinism": "required"
+}

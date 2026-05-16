@@ -1,0 +1,10 @@
+[project]
+name = "arc-apache"
+version = "4.0.0"
+description = "Binary-first memory and cryptographic proof substrate for ARC systems"
+requires-python = ">=3.10"
+authors = [{ name = "Gary Doman" }]
+license = { text = "MIT" }
+
+[project.scripts]
+arc-apache = "arc_apache.cli:main"
