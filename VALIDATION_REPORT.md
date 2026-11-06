@@ -1,6 +1,8 @@
 # ARC-Apache v5 Validation Report
 
 Validation run completed locally in the package directory.
+Re-run after the v0.5.1 repository professionalization (the v5 manifest
+format itself is unchanged).
 
 ## Commands executed
 
@@ -13,7 +15,7 @@ python3 -m pytest -q tests
 
 ```text
 ARC-Apache v5 smoke test passed
-3 passed
+11 passed
 ```
 
 Additional manual cryptographic path checked:
@@ -26,3 +28,13 @@ Additional manual cryptographic path checked:
 - verified signed receipt
 
 Result: signed receipt verification returned `ok: true`.
+
+## v5 format check (v0.5.1)
+
+- A fixed payload re-packed after the changes produces the identical
+  deterministic v5 fields (envelope SHA-256, Merkle root, chunk hashes,
+  object ID, envelope size) as before the changes.
+- A manifest produced before the changes still verifies and restores
+  byte-identically with the current code.
+- Tampered or missing chunks fail `verify`/`restore` as expected
+  (covered by `tests/test_v5_proof.py`).
