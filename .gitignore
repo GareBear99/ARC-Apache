@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ARC-Apache stores and secrets (never commit a store or a key)
+.arc_apache/
+.arc_apache_smoke/
+*.aesgcm.key.b64
+*.key.b64
+keys/private/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
