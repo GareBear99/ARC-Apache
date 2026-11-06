@@ -1,5 +1,7 @@
 # ARC-Apache Contracts v4
 
+> **Historical — v4.** This document describes the v4 design. The current implementation is v5 (see `README.md` and `schemas/binary_manifest.schema.json`); this file is kept for reference only.
+
 ## Contract 1 — Binary-first truth
 
 Every durable fact must have a binary object identity before it becomes canonical ARC memory.

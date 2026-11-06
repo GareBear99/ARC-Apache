@@ -1,5 +1,7 @@
 # ARC-Apache Master Spec v4
 
+> **Historical — v4.** This document describes the v4 design. The current implementation is v5 (see `README.md` and `schemas/binary_manifest.schema.json`); this file is kept for reference only.
+
 ## Mission
 
 ARC-Apache is the binary memory substrate for ARC. Its job is to store every durable fact, runtime action, payload, frame, language artifact, model artifact, repository state, and seeded-generation reference as deterministic binary first, then bind that binary to cryptographic receipts.

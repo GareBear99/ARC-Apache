@@ -46,6 +46,25 @@ It supports:
 - ARC-Core route stubs
 - tests and smoke validation
 
+## Format stability
+
+The v5 manifest format (`schemas/binary_manifest.schema.json`, `VERSION = 5`
+in `arc_apache/cli.py`) is frozen. Consumers — including ARC-Emulator, which
+adopts v5 as-is — depend on the manifest fields, the envelope layout, the
+chunk hashes, and the Merkle construction. A format change requires a new
+version, never a silent edit to v5. `tests/test_v5_proof.py` pins the
+deterministic v5 hashes for a fixed payload so a format change fails loudly.
+
+## Repository layout
+
+- `arc_apache/` — the v5 CLI (dependency-free core; `cryptography` optional)
+- `scripts/arc_apache.py` — the CLI entry point; `scripts/regen_manifest.py` regenerates `MANIFEST.sha256.json`
+- `schemas/` — JSON schemas for the v5 manifest, receipts, streams, and SURE recipes
+- `tests/` — pytest suite (run with `python -m pytest`)
+- `integration/` — integration contracts and stubs for ARC-Core, the Language Module, StreamMemory, LLMBuilder, and Arc-RAR
+- `docs/`, `contracts/`, `math/` — specs and design docs (v4 files are marked historical)
+- `examples/` — example SURE parameters
+
 ## Doctrine
 
 ```text

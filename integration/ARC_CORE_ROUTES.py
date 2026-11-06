@@ -1,7 +1,13 @@
-"""ARC-Core integration stub for ARC-Apache v5.
+"""ARC-Core integration contract for ARC-Apache v5.
 
-Drop this pattern into ARC-Core's FastAPI route layer after adapting imports,
-auth dependencies, and database services.
+This file is the contract template ARC-Core's FastAPI route layer adopts
+(request/response models for registering a v5 manifest and receipt).
+It is NOT a live route in this repo: the route itself must be implemented
+in ARC-Core, against ARC-Core's auth dependencies and database services,
+and ARC-Core has no payload-registration routes yet — so there is nothing
+to wire up from this side. Do not uncomment the skeleton below and expect
+it to run here; it is a drop-in pattern for ARC-Core, kept in sync with
+the v5 manifest fields in schemas/binary_manifest.schema.json.
 """
 from __future__ import annotations
 

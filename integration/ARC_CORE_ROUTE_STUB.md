@@ -13,7 +13,7 @@ Minimal register-manifest payload:
 
 ```json
 {
-  "version": 4,
+  "version": 5,
   "payload_sha256": "...",
   "manifest_sha256": "...",
   "merkle_root": "...",

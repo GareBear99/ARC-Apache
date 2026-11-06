@@ -1,5 +1,7 @@
 # Integration Blueprint v4
 
+> **Historical — v4.** This document describes the v4 design. The current implementation is v5 (see `README.md` and `schemas/binary_manifest.schema.json`); this file is kept for reference only.
+
 ## Phase 1 — Standalone ARC-Apache repo
 
 Create a new repo or module with this package. Validate the CLI first.
