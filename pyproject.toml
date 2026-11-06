@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "arc-apache-binary-memory"
-version = "0.5.0"
+version = "0.5.1"
 description = "Binary-first cryptographic memory substrate for ARC systems"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -11,10 +15,13 @@ dependencies = []
 
 [project.optional-dependencies]
 crypto = ["cryptography>=42"]
-test = ["pytest>=8", "cryptography>=42"]
+test = ["pytest>=8", "cryptography>=42", "pydantic>=2"]
 
 [project.scripts]
 arc-apache = "arc_apache.cli:main"
+
+[tool.setuptools]
+packages = ["arc_apache"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
